@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="תיק עבודות של אריאל פלדמן - מפתח Full Stack עם פרויקטים, ניסיון וטכנולוגיות מובילות.">
+    <meta name="keywords"
+        content="אריאל פלדמן, מפתח Full Stack, פיתוח ווב, JavaScript, React, Node.js, תיק עבודות, פורטפוליו">
+    <link rel="stylesheet" href="./CSS/setupStyles.css">
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="icon" href="./images/faviconAFA.png">
+    <title>Ariel Feldman Portfolio</title>
+</head>
+
+<body>
+    <!-- Header section -->
+
+    <div class="headBox">
+        <header>
+            <div class="logo">
+                <a href="#index">
+                    <img src="./images/logoAFA.png" alt="Logo of Ariel Feldman Architech">
+                </a>
+            </div>
+            <label class="hamMenu">
+                <input type="checkbox">
+            </label>
+            <!-- <button id="themeToggler" class="themeSwitch">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </button> -->
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#projects">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- Main section -->
+    <main class="content" id="mainContent">
+
+        <!-- Landing Section -->
+
+        <div class="backgroundGradient"></div>
+        <section class="sectionLanding" id="home">
+            <!-- Main Image -->
+            <div class="selfImg">
+                <img src="./images/selfImage.jpg" loading="lazy"
+                    alt="picture of ariel feldman the founder of Architech.com">
+            </div>
+            <!-- My Info -->
+            <div class="myIntro">
+                <h1>Ariel <span>Feldman</span></h1>
+                <h2>I'm a <span style="color: var(--hd-clr) ;">Full Stack Developer</span></h2>
+                <p>With a passion for creative & clean code and a drive for continuous learning, I turn complex problems
+                    into
+                    elegant
+                    solutions.</p>
+                <!-- Socials -->
+                <div class="socials">
+                    <div class="levelIt">
+                        <a href="#">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <div class="levelIt">
+                        <a href="">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="levelIt">
+                        <a href="">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Download CV Button -->
+                <button class="CV-Btn">
+                    <i class="fa-solid fa-download" style="padding-right: 10px ;"></i>
+                    Download CV
+                </button>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+
+        <section class="aboutMe" id="about">
+            <h1>About <span>Me</span></h1>
+            <div class="aboutMeGridContainer">
+                <div class="imgBox">
+                    <img src="./images/AboutImg.png"
+                        alt="picture of Ariel the founder appearing out of circle of blue light" loading="lazy">
+                </div>
+                <div class="aboutMeInfo">
+                    <h2>Full-Stack Developer <span>& More...</span></h2>
+                    <p>
+                        My journey is fueled by a vivid imagination and creative spirit. I'm a passionate autodidact
+                        with an
+                        insatiable desire to succeed, constantly seeking knowledge and refining my skills through
+                        everything I do. Driven by core values of
+                        responsibility, dedication, and loyalty, and complemented by a friendly and service-oriented
+                        approach,
+                        I'm a valuable asset to any team. Always striving for excellence and committed to advancing the
+                        goals of
+                        any organization I'm a part of.
+                    </p>
+                </div>
+                <div class="readMoreBtn">
+                    <a href="#" class="aboutMeLinkButton">Read More...</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- My Projects Section -->
+
+        <section class="myProjects" id="projects">
+            <h1>My <span>Projects</span></h1>
+            <div class="carouselBody">
+                <figure id="spiningCarousel" class="spinCarousel">
+                    <!-- Project cards hardcoded directly into HTML -->
+                    <div class="cardBoxing" style="--i:1">
+                        <div class="projectCard">
+                            <img src="./images/projectE-C.jpg" alt="E-commerce Store card">
+                            <h3>E-commerce Store</h3>
+                            <p>E-commerce platform with user authentication, product listings, shopping
+                                cart, and checkout
+                                functionality.</p>
+                        </div>
+                    </div>
+                    <div class="cardBoxing" style="--i:2">
+                        <div class="projectCard">
+                            <img src="/images/projectManageApp.jpg" alt="Task Manager App card">
+                            <h3>Task Manager App</h3>
+                            <p>A responsive task management application allowing users to create, update, and delete
+                                tasks. Features include
+                                priority setting and due dates. This description is also made longer to ensure the
+                                ellipsis appears.</p>
+                        </div>
+                    </div>
+                    <div class="cardBoxing" style="--i:3">
+                        <div class="projectCard">
+                            <img src="https://placehold.co/400x300/00e6c2/1a1a1a?text=Weather+App"
+                                alt="Weather Dashboard">
+                            <h3>Weather Dashboard</h3>
+                            <p>An interactive weather dashboard fetching real-time weather data using a public API.
+                                Displays current weather
+                                and a 5-day forecast.</p>
+                        </div>
+                    </div>
+                    <div class="cardBoxing" style="--i:4">
+                        <div class="projectCard">
+                            <img src="https://placehold.co/400x300/00e6c2/1a1a1a?text=Recipe+Finder"
+                                alt="Recipe Finder">
+                            <h3>Recipe Finder</h3>
+                            <p>Search for recipes by ingredients or dish name. Integrates with a recipe API.</p>
+                        </div>
+                    </div>
+                    <div class="cardBoxing" style="--i:5">
+                        <div class="projectCard">
+                            <img src="./images/portfolioImgCard.jpg" alt="Portfolio Website">
+                            <h3>Portfolio Website</h3>
+                            <p>This very portfolio website, showcasing my skills and projects. Designed with a clean,
+                                modern aesthetic.</p>
+                        </div>
+                    </div>
+                    <div class="cardBoxing" style="--i:6">
+                        <div class="projectCard">
+                            <img src="https://placehold.co/400x300/00e6c2/1a1a1a?text=Blog+Platform"
+                                alt="Blog Platform">
+                            <h3>Blog Platform</h3>
+                            <p>A simple blog platform where users can create, edit, and publish posts.</p>
+                        </div>
+                    </div>
+                    <div class="cardBoxing" style="--i:7">
+                        <div class="projectCard">
+                            <img src="https://placehold.co/400x300/00e6c2/1a1a1a?text=Chat+App" alt="Chat Application">
+                            <h3>Chat Application</h3>
+                            <p>A real-time chat application built with WebSockets, allowing users to communicate.</p>
+                        </div>
+                    </div>
+                    <div class="cardBoxing" style="--i:8">
+                        <div class="projectCard">
+                            <img src="https://placehold.co/400x300/00e6c2/1a1a1a?text=Games" alt="Game Showcase">
+                            <h3>Game Showcase</h3>
+                            <p>A collection of small web-based games demonstrating interactive front-end skills.</p>
+                        </div>
+                    </div>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Contact Me Section -->
+
+        <section id="contact" class="contactMe">
+            <div class="inviteBox">
+                <h1>Contact <span>Me</span></h1>
+                <p class="invitationTxt">
+                    Have a project in mind, a question, or just want to connect? <br>
+                    Feel free to reach out using the form below. I'm always excited to discuss new opportunities!
+                    let's make your dream come true.
+                </p>
+            </div>
+            <div class="contactFormContainer">
+                <form id="contactForm" class="msgMe" action="mailto:ariel.architech@gmail.com" method="post">
+                    <div class="formGroup">
+                        <input type="text" id="fullName" name="fullName" placeholder=" " required>
+                        <label for="fullName">Name</label>
+                    </div>
+                    <div class="formGroup">
+                        <input type="email" id="email" name="email" placeholder=" " required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="formGroup">
+                        <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <button type="submit" class="submitBtn">
+                        <span>
+                            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                        </span> Send message
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Ariel Feldman. All rights reserved.</p>
+        <div class="socials-footer">
+            <div class="levelIt">
+                <a href="#">
+                    <i class="fa-brands fa-linkedin-in footerSocials"></i>
+                </a>
+            </div>
+            <div class="levelIt">
+                <a href="">
+                    <i class="fa-brands fa-github footerSocials"></i>
+                </a>
+            </div>
+            <div class="levelIt">
+                <a href="">
+                    <i class="fa-brands fa-facebook-f footerSocials"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- <script src="./JS/lightMode.js" defer></script> -->
+</body>
+
+</html>

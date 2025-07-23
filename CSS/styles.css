@@ -1,0 +1,1591 @@
+    /* Variables */
+    :root {
+        /* Colors Variables */
+        --bg-clr: #0d0d0d;
+        --hd-clr: #05aff2;
+        --bg2-clr: #1155c2;
+        --txt-clr: #f3f3f3;
+        --inactive: #d4d4d4;
+
+        /* Fonts Variables */
+        --hd-font: 'kotta one';
+        --txt-font: 'inter';
+
+        /* Size Variables */
+        --HdXL: 5.5rem;
+        --HdL: 3rem;
+        --Hdm: 1.5rem;
+        --txtSize: 1.125rem;
+
+        /* Hamburger Variables */
+        --bar-width: 40px;
+        --bar-height: 6px;
+        --ham-gap: 4px;
+        --animation-time: 200ms ease-in-out;
+        --hamTotalHeight: calc(var(--bar-height)*3 + var(--ham-gap)*2);
+
+        /* Define custom properties for responsive carousel sizing */
+        /* Base ratios derived from original dimensions (height/width, perspective/width, translateZ/width) */
+        --carousel-aspect-ratio: calc(250 / 180);
+        --carousel-perspective-ratio: calc(800 / 180);
+        --carousel-translateZ-ratio: calc(250 / 180);
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    /* ============== Light Mode ================= */
+
+    
+    /* ==================== Header Section ====================== */
+
+    .headBox{
+        width: 100vw;
+        background-color: var(--bg-clr);    
+        position: fixed;
+        top: 0;
+        border-bottom: 1px solid var(--hd-clr);
+        z-index: 9990;
+    }
+
+    header{
+        margin-left: 4vw;
+        width: 92vw;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        left: 0;
+        z-index: 50;
+    }
+
+    .logo{
+        a{
+            img{
+                width: 3rem;
+            }
+        }
+    }
+
+    /* ------------------- hamburger menu ----------------- */
+
+    .hamMenu{
+        display: flex;
+        flex-direction: column;
+        gap: var(--ham-gap);
+        width: max-content;
+        z-index: 2;
+        cursor: pointer;
+        /* X size - total hamburger height * square of 2 */
+        --XWidth: calc(var(--hamTotalHeight) * 1.41421356237)
+    }
+
+    .hamMenu::before, 
+    .hamMenu::after, 
+    .hamMenu input{
+        content: "";
+        width: var(--bar-width) ;
+        height: var(--bar-height);
+        background-color: var(--bg2-clr);
+        border-radius: 100px;
+        transform-origin: left center;
+        transition: opacity var(--animation-time), 
+        width var(--animation-time),
+        translate var(--animation-time),
+        rotate var(--animation-time),
+        background-color var(--animation-time);
+    }
+
+    .hamMenu input{
+            appearance: none ;
+            padding: 0;
+            margin: 0;
+            outline: none;
+            pointer-events: none;
+    }
+
+    .hamMenu:has(input:checked)::after {
+        rotate: -45deg;
+        width: var(--XWidth);
+        translate: 0 calc(var(--bar-height)/2);
+    }
+
+    .hamMenu:has(input:checked)::before {
+        rotate: 45deg;
+        width: var(--XWidth);
+        translate: 0 calc(var(--bar-height)/-2);
+    }
+
+    .hamMenu input:checked{
+        opacity: 0;
+        width: 0;
+    }
+
+    /* -------------------- NAVBAR --------------------- */
+
+    nav{
+        translate: 100%;
+        position: absolute;
+        top: 81px;
+        width: 100vw;
+        left: 0;
+        ul{
+            display: flex;
+            flex-direction: column;
+            background: var(--bg-clr);
+            li{
+                list-style-type: none;
+                border-bottom: 1px solid var(--hd-clr);
+                a{
+                    display: block;
+                    text-decoration: none;
+                    font-family: var(--txt-font);
+                    font-size: 1.3rem;
+                    line-height: 2;
+                    text-align: center;
+                    color: var(--bg2-clr);
+                    transition: background-color 0.3s ease;
+                    &:hover{
+                        color: var(--bg2-clr);
+                        text-decoration: underline;
+                        background-color: var(--inactive);
+                    }
+                }
+            }
+        }
+    }
+
+    /* linking hamMenu to nav */
+
+    .hamMenu:has(input:checked) + nav{
+        translate: 0;
+    }
+
+    .hamMenu:has(input:focus-visible)::before,
+    .hamMenu:has(input:focus-visible)::after,
+    .hamMenu input:focus-visible{
+    border: 1px solid var(--bg-clr);
+    box-shadow: 0 0 0 1px var(--bg2-clr);
+    }
+    
+/* ======================== Main section ========================== */
+
+    .content{
+        width: 100%;
+        margin-top: 80px;
+    }
+
+    /* ===================== Landing Section ===================== */
+
+    .backgroundGradient{
+        width: 100vw;
+        height: calc(50px + 75vw);
+        background-image: linear-gradient(45deg, var(--bg-clr), var(--bg-clr), var(--bg-clr), var(--bg2-clr), var(--hd-clr) );
+        position: absolute;
+        top: 80px;
+        z-index: -10;
+    }
+
+    .sectionLanding{
+        width: 100%; /* Ensure it takes full width */
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        justify-items: center;
+        align-items: center;
+        border-bottom: 1px solid var(--hd-clr);
+        padding: 20px 0 25px 0;
+        scroll-margin-top: 80px;
+    }
+
+    .selfImg{
+        margin-top: 20px;
+        justify-self: center;
+        width: 75%;
+        max-width: 300px;
+        img{
+            width: 100%;
+            border-radius: 50%;
+            border: 5px solid var(--hd-clr);
+            box-shadow: 0 0 5px 6px var(--hd-clr);
+        }
+    }
+    
+    .myIntro{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px; /* Spacing between elements in introContent */
+        padding: 0 10px; /* Small padding for mobile text */
+        width: 100%; /* Take full width of its grid cell */
+        h1 {
+                color: var(--hd-clr);
+                font-family: var(--hd-font);
+                font-size: var(--HdL);
+                text-align: center;
+                width: 100%;
+                span{
+                    color: var(--txt-clr);
+                }
+            }
+        h2 {
+            color: var(--inactive);
+            font-family: var(--hd-font);
+            text-align: center;
+            width: 100%;
+        }
+        p {
+            font-family: var(--txt-font);
+            color: var(--txt-clr);
+            text-align: center;
+            width: 80vw;
+            max-width: 600px;
+        }
+    }
+    
+    /* -------------- socials -------------- */
+
+    .myIntro .socials{
+        width: 40vw;
+        max-width: 200px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px; /* Adjust spacing from paragraph */
+    }
+
+    .levelIt{
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 1px solid var(--hd-clr);
+        box-shadow: 0 0 3px 4px var(--hd-clr);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        &:hover{
+            color: var(--bg-clr);
+            i {
+                color: var(--bg-clr);
+            }
+        }
+        i {
+            color: var(--hd-clr);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .fa-linkedin-in {
+            color: var(--hd-clr);
+            text-align: center;
+            padding-top: 11%; 
+        }
+        .fa-github {
+            padding-top: 6%;
+            color: var(--hd-clr);
+            text-align: center;
+            width: 26px;
+        }
+        .fa-facebook-f{
+            padding-top: 6%;
+            color: var(--hd-clr);
+            text-align: center;
+            width: 26px;
+        }
+        &:hover {
+            background-color: var(--hd-clr);
+            .fa-linkedin-in , .fa-github , .fa-facebook-f  {
+                color: var(--bg-clr);
+            }
+        }
+    }
+
+    /* -------------- BTN ------------------ */
+
+    .myIntro .CV-Btn {
+        margin-top: 20px; /* Adjust spacing from socials */
+        margin-bottom: 0; /* To reset default button margin-bottom */
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        height: 35px;
+        width: 190px;
+        background-color: transparent;
+        border-radius: 50px;
+        color: var(--hd-clr);
+        border: 1px solid var(--hd-clr);
+        box-shadow: 0 0 3px 4px var(--hd-clr);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--txt-font);
+        font-weight: normal;
+        font-size: var(--txtSize);
+        &:hover {
+            color: var(--bg-clr);
+            background-color: var(--hd-clr);
+            box-shadow: 0 0 3px 4px var(--hd-clr);
+        }   
+    }
+
+/* ============== About Me Section ===================== */
+
+.aboutMe {
+    width: 100vw;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column for mobile */
+    grid-template-rows: auto auto; /* Stack h1 and aboutMeGridContainer */
+    gap: 20px;
+    justify-items: center;
+    justify-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--hd-clr);
+    scroll-margin-top: 80px;
+    h1 {
+        grid-row: 1 ;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 10px;
+        color: var(--txt-clr);
+        font-family: var(--hd-font);
+        font-size: var(--HdL);
+        span{
+            color: var(--hd-clr);
+        }
+    }
+    .aboutMeGridContainer{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+        max-width: 800px;
+        justify-items: center;
+        align-items: center;
+        .imgBox {
+            justify-self: center;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 60%;
+                max-width: 400px;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.aboutMeInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 0 10px;
+
+    h2 {
+        width: 100%;
+        color: var(--hd-clr);
+        font-family: var(--hd-font);
+        font-size: calc(var(--HdL)*0.6);
+
+        span {
+            color: var(--txt-clr);
+        }
+    }
+
+    p {
+        width: 100%;
+        color: var(--txt-clr);
+        padding: 0 15px;
+        text-align: center;
+        font-family: var(--txt-font);
+    }
+}
+    .readMoreBtn{
+        background-color: transparent;
+        margin-top: 20px;
+        /* Adjust spacing from text */
+        margin-bottom: 0;
+        padding: 1% 2% 0 3%;
+        transition: background-color 0.3s ease,box-shadow 0.3s ease;
+        height: 35px;
+        width: 190px;
+        border-radius: 50px;
+        font-family: var(--txt-font);
+        font-weight: normal;
+        font-size: var(--txtSize);
+        border: 1px solid var(--hd-clr);
+        box-shadow: 0 0 3px 4px var(--hd-clr);
+        cursor: pointer;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;            
+        a{
+            text-decoration: none;
+            color: var(--hd-clr);
+        }
+        &:hover {
+            background-color: var(--hd-clr);
+            box-shadow: 0 0 3px 4px var(--hd-clr);
+            a{
+                color: var(--bg-clr);
+            }
+        }
+    }    
+
+
+
+
+
+/* ================= My Project Section =================== */
+
+.myProjects{
+    width: 100vw;
+    min-height: 85vw;
+    margin-top: 0; 
+    border-bottom: 1px solid var(--hd-clr);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    place-items: center;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    scroll-margin-top: 80px;
+    h1{
+        grid-row: 1;
+        font-family: var(--hd-font);
+        font-size: var(--HdL);
+        color: var(--txt-clr);
+        margin-bottom: 20px;
+        text-align: center;
+        padding-top: 0;
+        span {
+        color: var(--hd-clr);
+        }
+    }
+}
+
+.carouselBody{
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    padding: 40px 0; /* Increased top and bottom padding */
+}   
+
+.spinCarousel{
+    position: relative;
+    width: 180px; /* Smaller width for cards */
+    height: 250px; /* Slightly increased height to accommodate padding and prevent clipping */
+    transform: perspective(800px) rotateY(0deg);
+    transform-style: preserve-3d;
+    animation: animate 45s linear infinite;
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+@keyframes animate{
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(-360deg);
+    }
+}
+
+.spinCarousel .cardBoxing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform: rotateY(calc(var(--i)*45deg)) translateZ(250px); /* Increased translateZ to space them out */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* -------------- Project Card Styling ----------------- */
+
+.projectCard{
+    background-color: var(--bg-clr);
+    border: 1px solid var(--hd-clr);
+    border-radius: 10px;
+    padding: 10px; /* Reduced padding for smaller cards */
+    width: 90%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px var(--bg2-clr);
+    transition: transform 0.3s ease, box-shadow 0.3s ease ;
+    overflow: hidden;
+    img{
+        width: 100%;
+        max-height: 45%; /* Adjusted max-height for shorter cards */
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 6px; /* Reduced margin */
+        border: 1px solid var(--inactive);
+    }
+
+    h3{
+        font-family: var(--hd-font);
+        font-size:  1rem; /* Slightly smaller font size */
+        color: var(--hd-clr);
+        margin-bottom: 3px; /* Reduced margin */
+        width: 96%;
+    }
+
+    p{
+        font-family: var(--txt-font);
+        font-size: 0.7rem; /* Slightly smaller font size */
+        width: 96%;
+        padding: 0 10px;
+        color: var(--txt-clr);
+        line-height: 1.3;
+        flex-grow: 1;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-align: left;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Reduced to 2 lines for shorter cards */
+        -webkit-box-orient: vertical;
+    }
+}
+
+.projectCard:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 6px 12px var(--hd-clr);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 9999;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Black w/ opacity */
+    backdrop-filter: blur(5px);
+    /* Optional: Adds a blur effect to the background */
+    -webkit-backdrop-filter: blur(5px);
+    /* For Safari */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--bg-clr);
+    margin: auto;
+    padding: 30px;
+    border: 1px solid var(--hd-clr);
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transform: scale(0.9);
+    opacity: 0;
+    animation: fadeInScale 0.3s forwards;
+}
+
+@keyframes fadeInScale {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-content img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid var(--inactive);
+}
+
+.modal-content h3 {
+    font-family: var(--hd-font);
+    font-size: 1.8rem;
+    color: var(--hd-clr);
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-family: var(--txt-font);
+    font-size: 1rem;
+    color: var(--txt-clr);
+    line-height: 1.5;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.close-button {
+    color: var(--hd-clr);
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--inactive);
+    text-decoration: none;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.modal-actions a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--hd-clr);
+    color: var(--bg-clr);
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: var(--txt-font);
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-actions a:hover {
+    background-color: var(--inactive);
+    transform: translateY(-2px);
+}
+
+
+/* ================= Contact Me Section =================== */
+
+#contact{
+    scroll-margin-top: 80px;
+}
+
+.contactMe {
+    padding: 30px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr; /* Auto height for h1, p, then 1fr for form container */
+    justify-items: center;
+    align-content: start;
+    width: 100%; /* Ensure it takes full width within its container */
+    margin: 0 auto;
+    /* border-bottom: 1px solid var(--hd-clr);
+    max-width: none; */
+    }
+
+.inviteBox {
+    grid-row: 1 / span 2;
+    /* Span h1 and p in mobile layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center text on mobile */
+    text-align: center;
+    /* Center text on mobile */
+    width: 100%;
+    max-width: 700px;
+    /* Limit width of text block on mobile */
+    margin-bottom: 40px;
+    /* Space between text block and form on mobile */
+}
+
+.contactMe h1 {
+    /* grid-row: 1; */ 
+    color: var(--txt-clr);
+    font-size: var(--HdL);
+    margin-bottom: 20px;
+    font-family: var(--hd-font);
+    text-align: center; /* Ensure text is centered */
+    span{
+        color: var(--hd-clr); /* changing the color of the span */
+    }
+}
+
+.contactMe p.invitationTxt {
+    /* grid-row: 2; */
+    color: var(--txt-clr);
+    font-family: var(--txt-font);
+    font-size: var(--txtSize);
+    margin-bottom:0 /* 40px */; /* Increased margin to match image spacing */
+    max-width: 700px;
+    padding: 0 20px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.contactFormContainer {
+    grid-row: 3; /* Place in the third row */
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto; /* Keep auto margins for horizontal centering within its grid cell */
+    padding: 20px;
+    background-color: var(--bg-clr); /* Form background is the main dark background */
+    /* border: 1px dashed var(--bg2-clr); */
+    background-color: #2b2b2b70;
+    border-radius: 10px;
+}
+
+.formGroup {
+    margin-bottom: 30px; /* Increased space between form groups */
+    position: relative; /* Crucial for positioning the floating label */
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--inactive);
+    background-color: transparent;
+    color: var(--txt-clr);
+    font-family: var(--txt-font);
+    font-size: var(--txtSize);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.formGroup textarea {
+    resize: none;
+}
+
+.formGroup label {
+    position: absolute;
+    left: 0;
+    top: 12px;
+    /* Initial vertical position, aligned with input text baseline */
+    color: var(--inactive);
+    font-family: var(--txt-font);
+    font-size: var(--txtSize);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    pointer-events: none;
+    /* Allow clicks to pass through to input */
+    transition: transform 0.2s ease-out, font-size 0.2s ease-out, color 0.2s ease-out, top 0.2s ease-out, left 0.2s ease-out;
+    /* Removed right from transition */
+    transform-origin: left center;
+    /* For scaling */
+    /* Removed width: 100% and text-align: left from here as it's not needed for the floating effect when left:0 */
+}
+
+.formGroup input:focus+label,
+.formGroup textarea:focus+label,
+.formGroup input:not(:placeholder-shown)+label,
+.formGroup textarea:not(:placeholder-shown)+label {
+    top: -10px;
+    /* Move up outside the input area */
+    left: 0;
+    /* Keep it aligned to the left */
+    font-size: 0.7rem;
+    /* Make smaller */
+    color: var(--hd-clr);
+    /* Change color to accent */
+    /* Removed text-align: right; and transform: none; as they are not needed for top-left */
+}
+
+.submitBtn{
+    letter-spacing: 0.1rem;
+    margin-top: 0.5rem;
+    padding: 20px;
+    height: 34px;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 50px;
+    color: var(--hd-clr);
+    font-family: var(--txt-font);
+    box-shadow: 0 0 3px 4px var(--hd-clr);
+    font-size: var(--txtSize);
+    border: 1px solid var(--hd-clr);
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    text-transform: uppercase;
+    cursor: pointer;
+    span {
+        padding: 5px 10px 5px 5px;
+    }
+    &:hover{
+        background-color: var(--hd-clr); /* Fill with accent color on hover */
+        color: var(--bg-clr);
+        border-color: var(--hd-clr);
+        transform: none;
+        box-shadow: none; /* No box-shadow on hover */
+    }
+}
+
+/* ================= FOOTER =================== */
+footer {
+    background-color: var(--bg2-clr);
+    /* Darker background for the footer */
+    color: var(--txt-clr);
+    padding: 20px;
+    /* Default padding for mobile */
+    display: flex;
+    flex-direction: column;
+    /* Stack elements vertically on mobile */
+    align-items: center;
+    /* Center items horizontally */
+    justify-content: center;
+    /* Center content vertically if height allows */
+    text-align: center;
+    /* Center text content */
+    width: 100%;
+    /* Ensure footer takes full width */
+}
+
+footer p {
+    font-family: var(--txt-font);
+    color: var(--bg-clr);
+    font-size: 0.8rem;
+    /* Smaller font size for copyright on mobile */
+    margin-bottom: 15px;
+    /* Space below copyright text on mobile */
+}
+
+.socials-footer {
+    display: flex;
+    gap: 15px;
+    /* Space between social icons on mobile */
+    margin-top: 0;
+    /* No top margin needed if p has margin-bottom */
+}
+
+.levelIt {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    /* Circular background for icons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--inactive);
+    /* Border color for the circle */
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+.levelIt .footerSocial {
+    color: var(--bg-clr);
+}
+
+.levelIt a {
+    color: var(--bg-clr);
+    /* Default icon color */
+    text-decoration: none;
+    font-size: 1.2rem;
+    /* Icon size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* Make anchor fill the parent levelIt div */
+    height: 100%;
+    /* Make anchor fill the parent levelIt div */
+}
+
+/* Hover effects for social icons */
+.levelIt:hover {
+    /* background-color: var(--bg-clr); */
+    /* Fill with accent color on hover */
+    border-color: var(--bg-clr);
+    /* Change border to accent color on hover */
+    box-shadow: 0 0 5px var(--bg2-clr);
+    /* Subtle shadow on hover */
+}
+
+.levelIt a:hover {
+    color: var(--bg2-clr);
+    /* Change icon color to background color on hover */
+}
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++ RESPONSIVE +++++++++++++++++++++++ */
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* ======================================================= */
+/* ============== HEADER SECTION RESPONSIVE ============== */
+/* ======================================================= */
+
+/* -------------------HAMBURGER RESPONSIVE ------------------*/
+
+@media (min-width: 992px) {
+    .hamMenu {
+        display: none;
+    }
+}
+
+/* ------------------- NAVBAR RESPONSIVE ------------------*/
+
+/* ----------- Medium Screens (min-width: 768px) ---------- */
+
+@media (min-width: 768px) {
+
+    nav {
+        width: 25vw;
+        /* Set width for dropdown */
+        left: auto;
+        /* Override left:0 */
+        right: 0;
+        /* Position from right */
+        position: fixed;
+        /* Ensure it stays fixed from right */
+        top: 81px;
+        /* Keep it below the header */
+        height: calc(100vh - 81px);
+        /* Make it full height minus header */
+        overflow-y: auto;
+        /* Add scroll if content overflows */
+    }
+}
+
+/* ----------- Large Screens (min-width: 992px) ---------- */
+
+@media (min-width: 992px) {
+
+    nav {
+        position: static;
+        /* Remove absolute/fixed positioning */
+        translate: 0;
+        /* Make nav visible */
+        width: auto;
+        /* Allow nav to take natural width */
+        border: none;
+        background: transparent;
+        height: auto;
+        /* Reset height */
+        overflow-y: visible;
+
+        /* Reset overflow */
+        ul {
+            flex-direction: row;
+            background: transparent;
+            gap: 20px;
+            padding-top: 0;
+
+            /* To remove padding */
+            li {
+                border-bottom: none;
+
+                /* Remove border from list items */
+                a {
+                    font-size: 1.3rem;
+                    line-height: 1.5;
+                    padding: 5px 10px;
+                    color: var(--txt-clr);
+                }
+            }
+        }
+    }
+
+    nav ul li a:hover {
+        background-color: transparent;
+        /* Remove hover background */
+        text-decoration: none;
+        color: var(--hd-clr);
+    }
+}
+
+
+/* ======================================================= */
+/* ============= LANDING SECTION RESPONSIVE ============== */
+/* ======================================================= */
+
+/* ----------- Small Screens (min-width: 576px) ---------- */
+
+@media (min-width: 576px) {
+    .sectionLanding {
+        padding: 60px 30px 40px 30px;
+    }
+
+    .selfImg {
+        width: 60%; /* Adjust image width */
+        max-width: 350px;
+    }
+
+    .myIntro {
+        max-width: 550px;
+        /* Allow intro text to be wider */
+    }
+}
+
+/* ----------- Medium Screens (min-width: 768px) ---------- */
+
+@media (min-width: 768px) {
+
+    .sectionLanding {
+        grid-template-columns: 1fr 1fr;
+        padding: 80px 60px;
+        gap: 40px;
+    }
+
+    .selfImg {
+        grid-column: 2;
+        grid-row: 1;
+        margin-top: 0;
+        justify-self: end;
+        /* Align .selfImg to the right of its gridcell */
+        align-self: center;
+        /* Vertically centered */
+        width: 100%;
+        /* max-width: 400px; */
+        img {
+            object-fit: contain;
+            height: 100%;
+        }
+    }
+
+    .myIntro {
+        grid-column: 1;
+        grid-row: 1;
+        align-items: flex-start;
+        text-align: left;
+        padding: 0; /* Remove mobile padding */
+        justify-self: start; /* Align the intro content to the left of its gridcell */
+        align-self: center; /* Vertically center the intro content */
+        width: 100%;
+        max-width: 500px; /* Limit width for readability */
+        h1{
+            font-size: calc(var(--HdL) * 1.1);
+            text-align: left;
+            span{
+                color: var(--txt-clr);
+            }
+        }
+        h2{
+            text-align: left;
+            font-size: calc(var(--Hdm) * 1.2);
+        }
+        p{
+            text-align: left;
+            max-width: fit-content;
+            letter-spacing: 0.05rem;
+            line-height: 1.4;
+        }
+        .socials {
+            justify-content: flex-start; /* Align to the left */
+            gap: 43px;
+            margin-top: 30px;
+        }
+        .CV-Btn {
+            justify-content: center;
+            margin-top: 30px;
+        }
+    }
+}
+
+
+/* ----------- Large Screens (min-width: 992px) ---------- */
+
+@media (min-width: 992px) {
+
+    .sectionLanding {
+        padding: 100px 80px;
+        /* More padding for large screens */
+        gap: 60px;
+    }
+
+    .selfImg {
+        max-width: 350px;
+        align-self: end;
+        img{
+            width: 84%;
+        }
+    }
+
+    .myIntro {
+        max-width: 650px;
+        h1{
+            font-size: calc(var(--HdL) * 1.2);
+        }
+        h2{
+            font-size: calc(var(--Hdm) * 1.3);
+        }
+    }
+}
+
+
+/* ---------- Very Large Screens (min-width: 1200px) ---------- */
+
+@media (min-width: 1200px) {
+
+    .sectionLanding {
+        padding: 120px 100px;
+        gap: 80px;
+    }
+
+    .selfImg {
+        max-width: 550px;
+    }
+
+    .myIntro {
+        max-width: 700px;
+        h1{
+            font-size: calc(var(--HdL) * 1.3);
+        }
+        h2{
+            font-size: calc(var(--Hdm) * 1.4);
+        }
+    }
+}
+
+/* ======================================================= */
+/* ================= ABOUT ME RESPONSIVE ================= */
+/* ======================================================= */
+
+
+/* ----------- Small Screens (min-width: 576px) ---------- */
+
+@media (min-width: 576px) {
+
+    .aboutMe{
+        max-width: 1000px;
+    }
+
+    .aboutMe h1 {
+        font-size: var(--HdL);
+        margin-bottom: 30px;
+    }
+
+    .aboutMeGridContainer {
+        padding: 0 30px 60px 30px;
+        gap: 30px;
+    }
+
+    .imgBox {
+        width: 65%; 
+        max-width: 400px;
+    }
+
+    .aboutMeInfo {
+        gap: 20px;
+        p{
+            font-size: calc(var(--txtSize) * 0.9);
+            line-height: 1.5;
+        }
+    }
+
+    .aboutMeGridContainer .aboutMeInfo h2 {
+        font-size: calc(var(--Hdm) * 1.2);
+    }
+}
+
+/* ----------- Medium Screens (min-width: 768px) ---------- */
+
+@media (min-width: 768px) {
+
+    .aboutMe {
+        height: calc(100vh-80px);
+        width: 100%;
+        max-width: 992px;
+        padding-top: 60px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        h1{
+            position: absolute;
+            left: 5.5rem;
+            top: 1.5rem;
+        }
+    }
+
+    .aboutMe .aboutMeGridContainer {
+        grid-template-columns: 1fr 2fr;
+        padding: 0 60px 80px 60px;
+        gap: 80px;
+        align-items: start; /* Align content to the top of the grid cells */
+        width: 100%;
+        max-width: none;
+    }
+
+    .imgBox {
+        grid-column: 1; /* Image on the left column */
+        grid-row: 1 / span 2;
+        margin-top: 0;
+        justify-self: center; /* Center within its cell */
+        align-self: start; /* Align to the start */
+        width: 100%;
+        max-width: 400px;
+        height: 100%; /* Crucial: Make imgBox fill the height of its spanned rows */
+    }
+
+    .aboutMe .aboutMeGridContainer .imgBox img {
+        object-fit: contain;
+        /* Ensure entire image is visible */
+        width: 100%;
+        height: 100%;
+        /* Make image fill its parent height */
+    }
+
+    .aboutMeInfo {
+        grid-column: 2;
+        grid-row: 1; /* Aligns with the top of the image */
+        align-items: flex-start;
+        text-align: left;
+        padding: 0;
+        justify-self: start;
+        max-width: none;
+    }
+
+    .aboutMe .aboutMeGridContainer .aboutMeInfo h2 {
+        font-size: calc(var(--Hdm) * 1.1);
+        margin-top: 5.5rem;
+        margin-left: 17px;
+        text-align-last: left;      
+    }
+
+    .aboutMe .aboutMeGridContainer .aboutMeInfo p {
+        font-size: calc(var(--txtSize) * 0.9);
+        text-align: left;
+        line-height: 1.5;
+        letter-spacing: 0.05rem;
+    }
+
+    .aboutMe .aboutMeGridContainer .readMoreBtn {
+        grid-column: 2;
+        /* Button aligns with the text column */
+        grid-row: 2;
+        /* Button comes after the text content */
+        margin-top: -1.5rem;
+        margin-left: -9rem;
+        /* Adjust margin as it's now in a new grid cell */
+        justify-content: flex-start;
+        /* Align button to the left */
+    }
+}
+
+/* ----------- Large Screens (min-width: 992px) ---------- */
+
+@media (min-width: 992px) {
+
+    .aboutMe{
+        max-width: 1200px;
+        padding-top: 60px;
+        position: relative;
+    }
+
+    .aboutMe h1 {
+        font-size: calc(var(--HdL) * 1.1);
+        left: 7rem;
+    }
+
+    .aboutMe .aboutMeGridContainer {
+        padding: 0 80px 100px 80px;
+        gap: 120px;
+    }
+
+    .imgBox {
+        max-width: 500px;
+        min-width: 300px;
+    }
+
+    .aboutMeInfo {
+        width: 100%;
+        max-width: none;            
+    }
+
+    .aboutMe .aboutMeGridContainer .aboutMeInfo h2 {
+        font-size: calc(var(--Hdm) * 1.1);
+        margin-left: 2rem;
+    }
+
+    .aboutMe .aboutMeGridContainer .aboutMeInfo p {
+        font-size: calc(var(--txtSize) * 0.9);
+        padding: 5px;
+    }
+}
+
+/* ---------- Very Large Screens (min-width: 1200px) ---------- */
+@media (min-width: 1200px) {
+    .aboutMe {
+        max-width: 1400px;
+        /* Adjusted for very large screens */
+    }
+
+    .aboutMe .aboutMeGridContainer {
+        padding: 0 100px 120px 100px;
+        /* Further increased padding for larger shoulders */
+        gap: 100px;
+    }
+
+    .aboutMe .aboutMeGridContainer .readMoreBtn {
+        margin-top: -80px;
+        /* Consistent top margin */
+        margin-left: -66%;
+        /* Ensure it stays aligned left */
+    }
+}
+
+/* ========================================================== */
+/* ================= MY PROJECTS RESPONSIVE ================= */
+/* ========================================================== */
+
+/* ----------- Small Screens (min-width: 576px) ---------- */
+
+@media (min-width: 576px) {
+
+    .myProjects h1 {
+        margin-top: 40px;
+    }
+
+    .spinCarousel {
+        width: 180px;
+        height: 250px;
+        transform: perspective(800px) rotateY(0deg);
+    }
+
+    .spinCarousel span {
+        transform: rotateY(calc(var(--i)*45deg)) translateZ(250px);
+    }
+
+    .projectCard img {
+        max-height: 45%;
+        /* Revert to a larger image height */
+    }
+
+    .projectCard h3 {
+        font-size: 1rem;
+        /* Revert to default heading size */
+    }
+
+    .projectCard p {
+        font-size: 0.7rem;
+        /* Revert to default text size */
+        -webkit-line-clamp: 2;
+        /* Revert to 2 lines */
+    }
+}
+
+/* ----------- Medium Screens (min-width: 768px) ---------- */
+
+@media (min-width: 768px) {
+    .myProjects h1 {
+        margin-top: 50px;
+    }
+
+    .spinCarousel {
+        width: 216px;
+        /* Scaled: 180px * 1.2 */
+        height: 300px;
+        /* Scaled: 250px * 1.2 */
+        transform: perspective(960px) rotateY(0deg);
+        /* Scaled: 800px * 1.2 */
+    }
+
+    .spinCarousel span {
+        transform: rotateY(calc(var(--i)*45deg)) translateZ(300px);
+        /* Scaled: 250px * 1.2 */
+    }
+}
+
+/* ----------- Large Screens (min-width: 992px) ---------- */
+
+@media (min-width: 992px) {
+
+    .myProjects h1 {
+        margin-top: 60px;
+    }
+
+    .spinCarousel {
+        width: 216px;
+        /* Scaled: 180px * 1.2 */
+        height: 300px;
+        /* Scaled: 250px * 1.2 */
+        transform: perspective(960px) rotateY(0deg);
+        /* Scaled: 800px * 1.2 */
+    }
+
+    .spinCarousel span {
+        transform: rotateY(calc(var(--i)*45deg)) translateZ(300px);
+        /* Scaled: 250px * 1.2 */
+    }
+}
+
+/* ---------- Very Large Screens (min-width: 1200px) ---------- */
+
+@media (min-width: 1200px) {
+    .myProjects h1 {
+        margin-top: 70px;
+    }
+
+    .spinCarousel {
+        width: 216px;
+        /* Scaled: 180px * 1.2 */
+        height: 300px;
+        /* Scaled: 250px * 1.2 */
+        transform: perspective(960px) rotateY(0deg);
+        /* Scaled: 800px * 1.2 */
+    }
+
+    .spinCarousel span {
+        transform: rotateY(calc(var(--i)*45deg)) translateZ(300px);
+        /* Scaled: 250px * 1.2 */
+    }
+}
+
+/* -------------------------------------------------------- */
+/* ---------------- CONTACT ME SECTION RESPONSIVE --------- */
+/* -------------------------------------------------------- */
+
+/* ----------- Small Screens (min-width: 576px) ---------- */
+
+@media (min-width: 576px) {
+    .contactMe {
+        padding: 30px 30px;
+        /* Adjust padding for slightly larger mobile screens */
+    }
+
+    .contactInfoWrapper {
+        margin-bottom: 50px;
+        /* More space on slightly larger mobile */
+    }
+}
+
+/* ----------- Medium Screens (min-width: 768px) ---------- */
+@media (min-width: 768px) {
+    .contactMe {
+        grid-template-columns: 1fr 1fr;
+        /* Two columns */
+        grid-template-rows: 1fr;
+        /* Single row for the two columns */
+        gap: 40px;
+        /* Small gap between columns */
+        align-items: stretch;
+        /* Make columns stretch to same height */
+        max-width: 1000px;
+        /* Overall section width */
+        padding: 60px 80px;
+        /* Padding for shoulders */
+        margin: 0 auto;
+        /* Center the section */
+    }
+
+    .contactInfoWrapper {
+        grid-column: 1;
+        /* Left column */
+        grid-row: 1;
+        /* First row */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Vertically center content if one column is taller */
+        align-items: flex-start;
+        /* Align content to the left */
+        text-align: left;
+        /* Text alignment */
+        margin-bottom: 0;
+        /* Remove mobile margin */
+        padding-right: 20px;
+        /* Small internal padding to separate from form */
+        height: 100%;
+        /* Ensure it takes full height of grid cell */
+    }
+
+    .contactMe h1 {
+        text-align: left;
+        /* Align h1 to the left */
+        margin-top: 0;
+        /* Reset margin-top if previously set for mobile */
+    }
+
+    .contactMe p.invitationTxt {
+        text-align: left;
+        /* Align paragraph to the left */
+        padding: 0;
+        /* Remove mobile padding */
+        margin-bottom: 0;
+        /* Remove any residual margin */
+    }
+
+    .contactFormContainer {
+        grid-column: 2;
+        /* Right column */
+        grid-row: 1;
+        /* First row */
+        width: 100%;
+        /* Fill its grid cell */
+        max-width: none;
+        /* Allow it to stretch */
+        margin: 0;
+        /* Remove auto margins */
+        height: 100%;
+        /* Ensure it takes full height of grid cell */
+        display: flex;
+        /* Use flexbox for form content alignment */
+        flex-direction: column;
+        justify-content: center;
+        /* Vertically center form content within its container */
+    }
+}
+
+/* ----------- Large Screens (min-width: 992px) ---------- */
+@media (min-width: 992px) {
+    .contactMe {
+        max-width: 1200px;
+        /* Wider overall section */
+        padding: 80px 100px;
+        /* Wider shoulders */
+        gap: 60px;
+        /* Slightly larger gap */
+    }
+}
+
+/* ---------- Very Large Screens (min-width: 1200px) ---------- */
+@media (min-width: 1200px) {
+    .contactMe {
+        max-width: 1400px;
+        /* Even wider overall section */
+        padding: 100px 120px;
+        /* Even wider shoulders */
+        gap: 80px;
+        /* Larger gap */
+    }
+
+    .inviteBox{
+        margin-top: 50px;
+        width: 500px;
+    }
+}
