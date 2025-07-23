@@ -28,14 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
             github: 'https://github.com/your-repo/task-manager-app'
         },
         3: {
-            img: 'https://placehold.co/400x300/00e6c2/1a1a1a?text=Weather+App',
+            img: './images/WheatherApp.jpg',
             title: 'Weather Dashboard',
             description: 'An interactive weather dashboard that fetches real-time weather data using a public API. It displays current weather conditions and a 5-day forecast for any city, providing essential weather information at a glance.',
             liveDemo: 'https://example.com/weather-demo',
             github: 'https://github.com/your-repo/weather-dashboard'
         },
         4: {
-            img: 'https://placehold.co/400x300/00e6c2/1a1a1a?text=Recipe+Finder',
+            img: './images/RFApp.jpg',
             title: 'Recipe Finder',
             description: 'A culinary application that allows users to search for recipes by ingredients or dish name. It integrates with a powerful recipe API to provide a wide array of delicious and easy-to-follow recipes.',
             liveDemo: 'https://example.com/recipe-demo',
@@ -49,21 +49,21 @@ document.addEventListener('DOMContentLoaded', () => {
             github: 'https://github.com/ArielArchitech/PortfolioProject'
         },
         6: {
-            img: 'https://placehold.co/400x300/00e6c2/1a1a1a?text=Blog+Platform',
+            img: './images/blogApp.jpg',
             title: 'Blog Platform',
             description: 'A simple yet robust blog platform where users can create, edit, and publish their posts. It features a user-friendly interface for content management and article display.',
             liveDemo: 'https://example.com/blog-demo',
             github: 'https://github.com/your-repo/blog-platform'
         },
         7: {
-            img: 'https://placehold.co/400x300/00e6c2/1a1a1a?text=Chat+App',
+            img: './images/chatApp.jpg',
             title: 'Chat Application',
             description: 'A real-time chat application built with WebSockets, enabling instant communication between users. It supports multiple chat rooms and a responsive design for various devices.',
             liveDemo: 'https://example.com/chat-demo',
             github: 'https://github.com/your-repo/chat-application'
         },
         8: {
-            img: 'https://placehold.co/400x300/00e6c2/1a1a1a?text=Games',
+            img: './images/GameApp.jpg',
             title: 'Game Showcase',
             description: 'A collection of small, engaging web-based games designed to demonstrate interactive front-end development skills and creative problem-solving in game design.',
             liveDemo: 'https://example.com/games-demo',
