@@ -1,0 +1,74 @@
+
+/* ================= Variables ================= */
+:root {
+    /* Colors Variables */
+    --bg-clr: #0d0d0d;
+    --hd-clr: #05aff2;
+    --bg2-clr: #1155c2;
+    --txt-clr: #f3f3f3;
+    --inactive: #d4d4d4;
+
+    /* Fonts Variables */
+    --hd-font: 'kotta one';
+    --txt-font: 'inter';
+
+    /* Size Variables */
+    --HdXL: 5.5rem;
+    --HdL: 2.5rem;
+    --Hdm: 1.5rem;
+    --HdS: 1.25rem;
+    --txtSize: 1.125rem;
+
+    /* Hamburger Variables */
+    --bar-width: 40px;
+    --bar-height: 6px;
+    --ham-gap: 4px;
+    --animation-time: 200ms ease-in-out;
+    --hamTotalHeight: calc(var(--bar-height)*3 + var(--ham-gap)*2);
+
+    /* self image */
+    --width-img: 75%;
+    --height-img: var(--width-img);
+
+    /* carousel img */
+    /* --Carousel-imgWidth:  */
+}
+
+html {
+    scrollbar-width: none;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-clr);
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+    /* Set the width for vertical scrollbar */
+    height: 5px;
+    /* Set the height for horizontal scrollbar */
+    scrollbar-width: thin;
+    /* Makes the scrollbar thinner in Firefox */
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-left: 1px solid var(--bg2-clr);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--inactive);
+    transition: background-color 0.3s ease;
+}
