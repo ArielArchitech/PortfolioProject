@@ -137,16 +137,16 @@
                 <figure id="spiningCarousel" class="spinCarousel">
                     <!-- Project cards hardcoded directly into HTML -->
                     <div class="cardBoxing" style="--i:1">
-                        <div class="projectCard">
-                            <img src="./images/projectE-C.jpg" alt="E-commerce Store card">
-                            <h3>E-commerce Store</h3>
-                            <p>E-commerce platform with user authentication, product listings, shopping
-                                cart, and checkout
-                                functionality.</p>
+                        <div class="projectCard" data-project-id="5">
+                            <img src="./images/portfolioImgCard.jpg" alt="Portfolio Website">
+                            <h3>Portfolio Website</h3>
+                            <p>This very portfolio website you are currently viewing! <br>
+                                It is my first website, designed with a clean, modern aesthetic to showcase my skills,
+                                projects, and provide a comprehensive overview of my work and experience.</p>
                         </div>
                     </div>
                     <div class="cardBoxing" style="--i:2">
-                        <div class="projectCard">
+                        <div class="projectCard" data-project-id="2">
                             <img src="/images/projectManageApp.jpg" alt="Task Manager App card">
                             <h3>Task Manager App</h3>
                             <p>A responsive task management application allowing users to create, update, and delete
@@ -156,9 +156,8 @@
                         </div>
                     </div>
                     <div class="cardBoxing" style="--i:3">
-                        <div class="projectCard">
-                            <img src="https://placehold.co/400x300/00e6c2/1a1a1a?text=Weather+App"
-                                alt="Weather Dashboard">
+                        <div class="projectCard" data-project-id="3">
+                            <img src="./images/WheatherApp.jpg" alt="Weather Dashboard">
                             <h3>Weather Dashboard</h3>
                             <p>An interactive weather dashboard fetching real-time weather data using a public API.
                                 Displays current weather
@@ -166,7 +165,7 @@
                         </div>
                     </div>
                     <div class="cardBoxing" style="--i:4">
-                        <div class="projectCard">
+                        <div class="projectCard" data-project-id="4">
                             <img src="https://placehold.co/400x300/00e6c2/1a1a1a?text=Recipe+Finder"
                                 alt="Recipe Finder">
                             <h3>Recipe Finder</h3>
@@ -174,15 +173,16 @@
                         </div>
                     </div>
                     <div class="cardBoxing" style="--i:5">
-                        <div class="projectCard">
-                            <img src="./images/portfolioImgCard.jpg" alt="Portfolio Website">
-                            <h3>Portfolio Website</h3>
-                            <p>This very portfolio website, showcasing my skills and projects. Designed with a clean,
-                                modern aesthetic.</p>
+                        <div class="projectCard" data-project-id="1">
+                            <img src="./images/projectE-C.jpg" alt="E-commerce Store card">
+                            <h3>E-commerce Store</h3>
+                            <p>E-commerce platform with user authentication, product listings, shopping
+                                cart, and checkout
+                                functionality.</p>
                         </div>
                     </div>
                     <div class="cardBoxing" style="--i:6">
-                        <div class="projectCard">
+                        <div class="projectCard" data-project-id="6">
                             <img src="https://placehold.co/400x300/00e6c2/1a1a1a?text=Blog+Platform"
                                 alt="Blog Platform">
                             <h3>Blog Platform</h3>
@@ -190,14 +190,14 @@
                         </div>
                     </div>
                     <div class="cardBoxing" style="--i:7">
-                        <div class="projectCard">
+                        <div class="projectCard" data-project-id="7">
                             <img src="https://placehold.co/400x300/00e6c2/1a1a1a?text=Chat+App" alt="Chat Application">
                             <h3>Chat Application</h3>
                             <p>A real-time chat application built with WebSockets, allowing users to communicate.</p>
                         </div>
                     </div>
                     <div class="cardBoxing" style="--i:8">
-                        <div class="projectCard">
+                        <div class="projectCard" data-project-id="8">
                             <img src="https://placehold.co/400x300/00e6c2/1a1a1a?text=Games" alt="Game Showcase">
                             <h3>Game Showcase</h3>
                             <p>A collection of small web-based games demonstrating interactive front-end skills.</p>
@@ -206,6 +206,26 @@
                 </figure>
             </div>
         </section>
+
+        <!-- Modal for Project Section -->
+        <div id="projectModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+
+                <img id="modal-img" src="" alt="Project Image">
+                <h3 id="modal-title"></h3>
+                <p id="modal-description"></p>
+
+                <div class="modal-actions">
+                    <a id="modal-live-demo" href="#" target="_blank" rel="noopener noreferrer"
+                        style="display: none;">Live
+                        Demo</a>
+                    <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer"
+                        style="display: none;">GitHub
+                        Repo</a>
+                </div>
+            </div>
+        </div>
 
         <!-- Contact Me Section -->
 
@@ -267,6 +287,8 @@
 
 
     <!-- <script src="./JS/lightMode.js" defer></script> -->
+    <script src="./JS/projectCardModal.js"></script>
+    <!-- <script src="./JS/CardModal.js"></script> -->
 </body>
 
 </html>
