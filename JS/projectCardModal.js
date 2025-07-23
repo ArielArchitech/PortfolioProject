@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
             img: './images/portfolioImgCard.jpg',
             title: 'Portfolio Website',
             description: 'This very portfolio website you are currently viewing! It is designed with a clean, modern aesthetic to showcase my skills, projects, and provide a comprehensive overview of my work and experience.',
-            liveDemo: 'https://example.com/portfolio-demo',
-            github: 'https://github.com/your-repo/portfolio-website'
+            liveDemo: 'https://arielarchitech.github.io/PortfolioProject/',
+            github: 'https://github.com/ArielArchitech/PortfolioProject'
         },
         6: {
             img: 'https://placehold.co/400x300/00e6c2/1a1a1a?text=Blog+Platform',
