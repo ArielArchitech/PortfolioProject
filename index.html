@@ -19,11 +19,12 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kotta+One&display=swap"
         rel="stylesheet">
     <link rel="icon" href="./images/faviconAFA.png">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <title>Ariel Feldman Portfolio</title>
 </head>
 
 <body>
-    <!-- Header section -->
+    <!--<> Header section -->
 
     <div class="headBox">
         <header>
@@ -58,19 +59,19 @@
         </header>
     </div>
 
-    <!-- Main section -->
+    <!--<> Main section -->
     <main class="content" id="mainContent">
 
         <!-- Landing Section -->
 
         <div class="backgroundGradient"></div>
         <section class="sectionLanding" id="home">
-            <!-- Main Image -->
+            <!--! Main Image -->
             <div class="selfImg">
                 <img src="./images/selfImage.jpg" loading="lazy"
                     alt="picture of ariel feldman the founder of Architech.com">
             </div>
-            <!-- My Info -->
+            <!--! My Info -->
             <div class="myIntro">
                 <h1>Ariel <span>Feldman</span></h1>
                 <h2>I'm a <span style="color: var(--hd-clr) ;">Full Stack Developer</span></h2>
@@ -78,33 +79,35 @@
                     into
                     elegant
                     solutions.</p>
-                <!-- Socials -->
+                <!--! Socials -->
                 <div class="socials">
                     <div class="levelIt">
-                        <a href="#">
+                        <a href="https://www.linkedin.com/in/ariel-feldman-498028285/" target="_blank"
+                            rel="noopener noreferrer">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
                     </div>
                     <div class="levelIt">
-                        <a href="">
+                        <a href="https://github.com/ArielArchitech" target="_blank" rel="noopener noreferrer">
                             <i class="fa-brands fa-github"></i>
                         </a>
                     </div>
                     <div class="levelIt">
-                        <a href="">
+                        <a href="https://www.facebook.com/profile.php?id=100093526142054" target="_blank"
+                            rel="noopener noreferrer">
                             <i class="fa-brands fa-facebook-f"></i>
                         </a>
                     </div>
                 </div>
-                <!-- Download CV Button -->
-                <button class="CV-Btn">
-                    <i class="fa-solid fa-download" style="padding-right: 10px ;"></i>
+                <!--! Download CV Button -->
+                <a href="./images/CVArielFS.pdf" download="Ariel_Feldman_CV.pdf" class="CV-Btn">
+                    <i class="fa-solid fa-download" style="padding-right: 10px;"></i>
                     Download CV
-                </button>
+                </a>
             </div>
         </section>
 
-        <!-- About Me Section -->
+        <!--<> About Me Section -->
 
         <section class="aboutMe" id="about">
             <h1>About <span>Me</span></h1>
@@ -134,13 +137,13 @@
             </div>
         </section>
 
-        <!-- My Projects Section -->
+        <!--<> PROJECTS SECTION -->
 
         <section class="myProjects" id="projects">
             <h1>My <span>Projects</span></h1>
             <div class="carouselBody">
                 <figure id="spiningCarousel" class="spinCarousel">
-                    <!-- Project cards hardcoded directly into HTML -->
+                    <!--! Project cards hardcoded directly into HTML -->
                     <div class="cardBoxing" style="--i:1">
                         <div class="projectCard" data-project-id="5">
                             <img src="./images/portfolioImgCard.jpg" alt="Portfolio Website">
@@ -152,44 +155,57 @@
                     </div>
                     <div class="cardBoxing" style="--i:2">
                         <div class="projectCard" data-project-id="2">
-                            <img src="./images/ManageApp.jpg" alt="Task Manager App">
+                            <img src="./images/ToDoApp.jpg" alt="Tasks Manager App">
                             <h3>Task Manager App</h3>
                             <p>A responsive task management application allowing users to create, update, and delete
                                 tasks. Features include
-                                priority setting and due dates. This description is also made longer to ensure the
-                                ellipsis appears.</p>
+                                priority setting and due dates. this app will give you the data of your habit of
+                                completing tasks.</p>
                         </div>
                     </div>
                     <div class="cardBoxing" style="--i:3">
                         <div class="projectCard" data-project-id="3">
-                            <img src="./images/WheatherApp.jpg" alt="Weather Dashboard">
-                            <h3>Weather Dashboard</h3>
-                            <p>An interactive weather dashboard fetching real-time weather data using a public API.
-                                Displays current weather
-                                and a 5-day forecast.</p>
+                            <img src="./images/DictionaryAPI.jpg" alt="dictionary image">
+                            <h3>Dynamic Dictionary App</h3>
+                            <p>A sleek, responsive web application that fetches and delivers real-time language data.
+                                Built to handle complex
+                                asynchronous data streams, the app allows users to instantly search definitions,
+                                phonetic pronunciations, synonyms, and
+                                audio examples through a clean, minimalist user interface. It features a persistent user
+                                search history tracker,
+                                leveraging local storage to allow quick access to recently viewed terms across sessions.
+                            </p>
                         </div>
                     </div>
                     <div class="cardBoxing" style="--i:4">
                         <div class="projectCard" data-project-id="4">
-                            <img src="./images/RFApp.jpg" alt="Recipe Finder">
-                            <h3>Recipe Finder</h3>
-                            <p>Search for recipes by ingredients or dish name. Integrates with a recipe API.</p>
+                            <img src="./images/PhotoGalleryApp.jpg" alt="Gallery App">
+                            <h3>Photo Gallery App</h3>
+                            <p>An App that make you cherish the great moments of your life.
+                                save an album cover and write the details of every picture to remember.
+                            </p>
                         </div>
                     </div>
                     <div class="cardBoxing" style="--i:5">
                         <div class="projectCard" data-project-id="1">
-                            <img src="./images/projectE-C.jpg" alt="E-commerce Store card">
-                            <h3>E-commerce Store</h3>
-                            <p>E-commerce platform with user authentication, product listings, shopping
-                                cart, and checkout
-                                functionality.</p>
+                            <img src="./images/upgradedTicTacToeGame.jpg" alt="E-commerce Store card">
+                            <h3>Upgraded Tic-Tac-Toe: Fire vs Ice</h3>
+                            <p>A complete visual and functional reimagining of the classic strategy game. Built with a
+                                dynamic elemental theme, this
+                                project elevates standard game logic into an immersive, responsive frontend experience
+                                featuring animated character
+                                states, interactive mode selections, and local state tracking.</p>
                         </div>
                     </div>
                     <div class="cardBoxing" style="--i:6">
                         <div class="projectCard" data-project-id="6">
-                            <img src="./images/blogApp.jpg" alt="Blog Platform">
-                            <h3>Blog Platform</h3>
-                            <p>A simple blog platform where users can create, edit, and publish posts.</p>
+                            <img src="/images/froggerGameApp.jpg" alt="Frogger GAME with a twist">
+                            <h3>Frogger GAME with a twist</h3>
+                            <p>Enchanted Princess Frogger is a responsive, canvas-based web game built entirely from
+                                scratch using vanilla HTML5, CSS3,
+                                and JavaScript. The project takes the foundational mechanics of the classic 1981 arcade
+                                game Frogger and wraps them in
+                                an immersive fantasy narrative.</p>
                         </div>
                     </div>
                     <div class="cardBoxing" style="--i:7">
@@ -201,16 +217,20 @@
                     </div>
                     <div class="cardBoxing" style="--i:8">
                         <div class="projectCard" data-project-id="8">
-                            <img src="./images/GameApp.jpg" alt="Game Showcase">
-                            <h3>Game Showcase</h3>
-                            <p>A collection of small web-based games demonstrating interactive front-end skills.</p>
+                            <img src="/images/HangMan.jpg" alt="Game Hangman screen shot">
+                            <h3>Hangman Game</h3>
+                            <p>A fully responsive Hangman game Fetches random words live from an external REST API,
+                                renders a progressive SVG gallows, and manages complete game state
+                                — guesses, wins, losses, and end conditions. Built with vanilla HTML, CSS, and
+                                JavaScript, structured across three separate files for
+                                clean separation of concerns.</p>
                         </div>
                     </div>
                 </figure>
             </div>
         </section>
 
-        <!-- Modal for Project Section -->
+        <!--<> MODAL CARD - PROJECT SECTION -->
         <div id="projectModal" class="modal">
             <div class="modal-content">
                 <span class="close-button">&times;</span>
@@ -230,7 +250,7 @@
             </div>
         </div>
 
-        <!-- Contact Me Section -->
+        <!--<> Contact Me Section -->
 
         <section id="contact" class="contactMe">
             <div class="inviteBox">
@@ -242,7 +262,7 @@
                 </p>
             </div>
             <div class="contactFormContainer">
-                <form id="contactForm" class="msgMe" action="mailto:ariel.architech@gmail.com" method="post">
+                <form id="contactForm" class="msgMe">
                     <div class="formGroup">
                         <input type="text" id="fullName" name="fullName" placeholder=" " required>
                         <label for="fullName">Name</label>
@@ -255,7 +275,8 @@
                         <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
                         <label for="message">Message</label>
                     </div>
-                    <button type="submit" class="submitBtn">
+                    <div id="formNotification" class="formNotification" aria-live="polite"></div>
+                    <button type="submit" class="submitBtn" id="submitBtn">
                         <span>
                             <i class="fa fa-paper-plane" aria-hidden="true"></i>
                         </span> Send message
@@ -266,22 +287,24 @@
 
     </main>
 
-    <!-- Footer -->
+    <!--<> Footer -->
     <footer>
         <p>&copy; 2025 Ariel Feldman. All rights reserved.</p>
         <div class="socials-footer">
             <div class="levelIt">
-                <a href="#">
+                <a href="https://www.linkedin.com/in/ariel-feldman-498028285/" target="_blank"
+                    rel="noopener noreferrer">
                     <i class="fa-brands fa-linkedin-in footerSocials"></i>
                 </a>
             </div>
             <div class="levelIt">
-                <a href="">
+                <a href="https://github.com/ArielArchitech" target="_blank" rel="noopener noreferrer">
                     <i class="fa-brands fa-github footerSocials"></i>
                 </a>
             </div>
             <div class="levelIt">
-                <a href="">
+                <a href="https://www.facebook.com/profile.php?id=100093526142054" target="_blank"
+                    rel="noopener noreferrer">
                     <i class="fa-brands fa-facebook-f footerSocials"></i>
                 </a>
             </div>
