@@ -1,3 +1,4 @@
+<img width="500" height="251" alt="siteGif" src="https://github.com/user-attachments/assets/59244ac2-bbdc-48c1-84a1-ea714b037588" />
 
 # Ariel Feldman — Portfolio Website
 
