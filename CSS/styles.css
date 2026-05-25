@@ -303,6 +303,12 @@
             text-align: center;
             width: 26px;
         }
+        /* .fa-globe{
+            padding-top: 6%;
+            color: var(--hd-clr);
+            text-align: center;
+            width: 26px;
+        } */
         &:hover {
             background-color: var(--hd-clr);
             .fa-linkedin-in , .fa-github , .fa-facebook-f  {
@@ -331,6 +337,7 @@
         font-family: var(--txt-font);
         font-weight: normal;
         font-size: var(--txtSize);
+        text-decoration: none;
         &:hover {
             color: var(--bg-clr);
             background-color: var(--hd-clr);
@@ -351,7 +358,7 @@
     justify-self: center;
     margin-left: auto;
     margin-right: auto;
-    padding: 40px 0;
+    /* padding: 40px 0; */
     border-bottom: 1px solid var(--hd-clr);
     scroll-margin-top: 80px;
     h1 {
@@ -418,9 +425,8 @@
 }
     .readMoreBtn{
         background-color: transparent;
-        margin-top: 20px;
-        /* Adjust spacing from text */
-        margin-bottom: 0;
+        /* margin-top: 20px;
+        margin-bottom: 0; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -439,6 +445,7 @@
         a{
             text-decoration: none;
             color: var(--hd-clr);
+            padding-left: 27px;
         }
         &:hover {
             background-color: var(--hd-clr);
@@ -457,7 +464,7 @@
 
 .myProjects{
     width: 100vw;
-    min-height: 85vw;
+    min-height: 85vh;
     margin-top: 0; 
     border-bottom: 1px solid var(--hd-clr);
     display: grid;
@@ -486,8 +493,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    overflow: hidden;
-    padding: 40px 0; /* Increased top and bottom padding */
+    /* overflow: hidden;
+    padding: 40px 0; */ /* Increased top and bottom padding */
 }   
 
 .spinCarousel{
@@ -810,6 +817,11 @@
     transform-origin: left center;
     /* For scaling */
     /* Removed width: 100% and text-align: left from here as it's not needed for the floating effect when left:0 */
+}
+
+#formNotification{
+    color: #ff0000;
+    font-size: 1.1rem;
 }
 
 .formGroup input:focus+label,
